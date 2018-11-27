@@ -8,6 +8,7 @@ const config = {
         max: 20,
         min:5
     },
-    port: 3000
+    port: 3000,
+    secretOrKey: "PlusUltra"
 }
 module.exports = config;

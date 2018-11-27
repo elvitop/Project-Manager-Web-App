@@ -1,17 +1,42 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
+const passport = require('../auth/passport');
 const jws = require('jsonwebtoken');
-const querys = require('../helpers/dbAccess')
+const dbAccess = require('../helpers/dbAccess');
+const config = require('../helpers/config');
 
-router.post('/user', function (req, res, next) {
-    querys.findUser(req.body.name, req.body.password).then((user) => {
-        const token = jws.sign(user, 'plusultra', {expiresIn: 300});
-        console.log(token);
-        res.status(200).json({user: user, token: token});
+router.post('/login', function (req, res, next) {
+    dbAccess.findUser(req.body.name).then((result) => {
+            if (req.body.password === result.users_password) {
+                var user = {
+                    user: result.users_username,
+                    id: result.users_id,
+                    type: result.type_users_id
+                }
+                const token = jws.sign(user, config.secretOrKey, {expiresIn: 180});
+                res.json({status: 200, name: result.users_name, token: token});
+            }else{
+                res.json({status: 401, message:"Incorrect Password"});
+            }
     }).catch((err) => {
-        res.send(err)
+        console.log(err);
+        res.json({status: 404, message:"Incorrect Username"});
     });
+});
+
+router.get('/auth', function (req, res, next) {
+    passport.authenticate('auth',{session: false},  (err, user, info) => {
+        if (err) {
+            console.log(err);
+        }
+        if (info != undefined) {
+            console.log(info.message);
+            res.json({status: 401, message: info.message});
+        }
+        if (user) {
+            res.json(user);
+        }
+    })(req, res, next);
 })
 
 
