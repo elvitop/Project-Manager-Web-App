@@ -24,21 +24,4 @@ router.post('/login', function (req, res, next) {
     });
 });
 
-router.get('/auth', function (req, res, next) {
-    passport.authenticate('auth',{session: false},  (err, user, info) => {
-        if (err) {
-            console.log(err);
-        }
-        if (info != undefined) {
-            console.log(info.message);
-            res.json({status: 401, message: info.message});
-        }
-        if (user) {
-            res.json(user);
-        }
-    })(req, res, next);
-})
-
-
-
 module.exports = router;

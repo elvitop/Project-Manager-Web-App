@@ -1,0 +1,140 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, nav {
+    list-style: none;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #212121;
+    color: #fff;
+    padding: 15px;
+}
+
+header h2 {
+	font-family: "Quicksand", sans-serif;
+}
+
+header nav {
+	display: flex;
+	margin-right: -15px;
+}
+
+header nav li:first-child {
+    cursor: default;
+}
+
+header nav li {
+    margin: 0 15px;
+    padding: 10px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    transition: background-color .5s ease-in-out, color .5s ease-in-out;
+    font-size: 20px;
+}
+
+header nav li:hover {
+    color: #586069;
+    background-color: #fff;
+}
+
+/* Hero Styles */
+
+.hero {
+    padding-top: 50px;
+    min-height: 600px;
+    background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-weight: 500;
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+.hero a {
+    background-color: #fff;
+    border-radius: 20px;
+    color: #586069;
+    font-size: 20px;
+    width: 30px;
+    transition: color .2s ease-in, transform .4s ease;
+    /* animation: 1s toCloud 1s forwards; */
+}
+
+.hero a:hover {
+    transform: scale(1.5);
+}
+
+@keyframes toCloud {
+    100% {
+        transform: translate(0, -400px);
+    }
+    35%{
+        opacity: 0;
+    }
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-top: 50px;
+}
+
+/* Projects Styles */
+.project-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    align-items: center;
+    width: 700px;
+    margin-bottom: 10px;
+}
+
+.project-info div > h3 {
+    font-size: 25px;
+    padding-left: 15px;
+}
+
+.project-info div > button {
+    color: black;
+    cursor: pointer;
+    font-size: 17px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: none;
+    padding: 4px 13px;
+    transition: background-color .2s ease-in, color .2s ease-in;
+    outline: none;
+    margin-right: 5px;
+}
+
+.project-info div > button:hover {
+    background-color: #586069;
+    color: #fff;
+}
+
+.project-info div > button:last-child:hover {
+    background-color: #d50000;
+}

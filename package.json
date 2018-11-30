@@ -4,7 +4,8 @@
   "description": "Project dedicated to the creation of any type of project and to manage it in the most appropriate way.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon server.js"
   },
   "author": "Elvis Araujo and Brandon Lugo",
   "license": "ISC",
@@ -12,7 +13,9 @@
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "jimp": "^0.6.0",
     "jsonwebtoken": "^8.4.0",
+    "multer": "^1.4.1",
     "node-gyp": "^3.8.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",

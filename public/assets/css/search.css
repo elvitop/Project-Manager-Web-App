@@ -1,0 +1,151 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, nav {
+    list-style: none;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #212121;
+    color: #fff;
+    padding: 15px;
+}
+
+header h2 {
+	font-family: "Quicksand", sans-serif;
+}
+
+header nav {
+	display: flex;
+	margin-right: -15px;
+}
+
+header nav li:first-child {
+    cursor: default;
+}
+
+header nav li {
+    margin: 0 15px;
+    padding: 10px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    transition: background-color .5s ease-in-out, color .5s ease-in-out;
+    font-size: 20px;
+}
+
+header nav li:hover {
+    color: #586069;
+    background-color: #fff;
+}
+
+/* Hero Styles */
+
+.hero {
+    padding-top: 50px;
+    min-height: 600px;
+    background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section .search {
+    display: flex;
+    width: 700px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+section .search input {
+    outline: none;
+    border-radius: 5px;
+    padding: 8px;
+    border: none;
+    width: 100%;
+}
+section .search div{
+    width: 600px;
+    display: flex;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+
+}
+
+section .search button {
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    color: #586069;
+    background-color: #fff;
+    transition: background-color .2s ease-in, box-shadow .2s ease-in;
+    margin-left: 10px;
+}
+
+section .search span {
+    font-size: 23px;
+    padding: 0 10px;
+    color: #586069;
+}
+
+section .search button:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+section .search button:focus {
+    box-shadow: 0 0 1px 3px rgb(230, 228, 228);
+}
+
+/* Projects Styles */
+.project-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    align-items: center;
+    width: 700px;
+    margin-bottom: 10px;
+}
+
+.project-info div > h3 {
+    font-size: 25px;
+    padding-left: 15px;
+}
+
+.project-info div > button {
+    color: black;
+    cursor: pointer;
+    font-size: 17px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: none;
+    padding: 4px 13px;
+    transition: background-color .2s ease-in, color .2s ease-in;
+    outline: none;
+    margin-right: 5px;
+}
+
+.project-info div > button:hover {
+    background-color: #586069;
+    color: #fff;
+}
+
+.project-info div > button:last-child:hover {
+    background-color: #d50000;
+}

@@ -1,2 +1,10 @@
 
 node_modules/
+
+helpers/querys\.js
+
+helpers/multer\.js
+
+helpers/dbAccess\.js
+
+public/assets/images/
